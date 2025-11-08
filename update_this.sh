@@ -37,9 +37,10 @@ backup() {
 
 
 
-### Updating pacman hooks
+### Updating pacman stuffs
 mkdir -p "$FS_DIR/etc/pacman.d"
 backup "/etc/pacman.d/hooks" "$FS_DIR/etc/pacman.d"
+backup "/etc/pacman.conf" "$FS_DIR/etc"
 
 
 
