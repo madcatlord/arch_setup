@@ -1,10 +1,19 @@
+### Loading the git script, that allows the fetching of the current branch name
+. /usr/share/git/completion/git-prompt.sh
+
 ### Setting the Comandline Design ###
 FINAL_CHAR="$"
 if [ $EUID -eq 0 ]; then
 	FINAL_CHAR="#"
 fi
 
-PS1="\[\e[31m\]\u\[\e[0m\]@\h \[\e[30;47m\][\w]\[\e[0m\]$FINAL_CHAR "
+# There are two ways to set it, either via PROMPT_COMMAND or PS1
+
+# PROMPT_COMMAND Variant. This is slightly faster, according to __git_ps1 documentation
+PROMPT_COMMAND='__git_ps1 "\[\e[31m\]\u\[\e[0m\]@\h \[\e[30;47m\][\w]\[\e[0m\]\[\e[31m\]" "\[\e[0m\]\n$FINAL_CHAR "'
+
+# PS1 Variation
+#PS1="\[\e[31m\]\u\[\e[0m\]@\h \[\e[30;47m\][\w]\[\e[0m\]\[\e[31m\]\$(__git_ps1)\[\e[0m\]\n$FINAL_CHAR "
 
 ### Adding ~/.local/bin to Path
 export PATH="$HOME/.local/bin:$PATH"
