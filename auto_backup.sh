@@ -12,7 +12,10 @@ fi
 
 # Update repo
 git add "$DIR"
-git commit -m "AUTO COMMIT"
-git push
+git commit -m "AUTO COMMIT $(date +'%d.%m.%Y')"
+
+if [[ $(echo $?) -eq 0 ]]; then
+	git push
+fi
 
 exit 0
