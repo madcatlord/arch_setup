@@ -1,0 +1,26 @@
+#audio-output {}
+
+#pulseaudio.output:hover {
+	box-shadow: inset 0px 0px 10px @color8;
+}
+
+#pulseaudio-slider {
+	min-width: 128px;
+}
+
+#pulseaudio-slider slider {
+	background-image: none;
+	background-color: @foreground;
+	border-color: @foreground;
+	box-shadow: none;
+}
+
+#pulseaudio-slider trough {
+	background-color: @foreground;
+	border: none;
+}
+
+#pulseaudio-slider highlight {
+	background-color: @color3;
+	border: none;
+}

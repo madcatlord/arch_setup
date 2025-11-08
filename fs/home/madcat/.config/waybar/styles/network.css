@@ -1,0 +1,12 @@
+#network:hover {
+	box-shadow: inset 0px 0px 10px @color8;
+}
+
+#network.disconnected {
+	background-color: @warning;
+	color: @color0;
+}
+
+#network.disabled {
+	background-color: @error;
+}

@@ -1,0 +1,22 @@
+@keyframes blinking {
+	to {
+		background-color: @background;
+	}
+}
+
+#battery {
+	border-radius: 9999px;
+}
+
+#battery.charging, #battery.plugged {
+	background-color: @good;
+}
+
+#battery.critical:not(.charging):not(.plugged) {
+	background-color: @error;
+	animation-name: blinking;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: steps(60);
+}

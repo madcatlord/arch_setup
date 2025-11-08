@@ -1,0 +1,10 @@
+[Trigger]
+Operation = Install
+Operation = Remove
+Operation = Upgrade
+Type = Package
+Target = *
+
+[Action]
+When = PostTransaction
+Exec = /etc/pacman.d/hooks/scripts/backup-updatePkgLists.sh

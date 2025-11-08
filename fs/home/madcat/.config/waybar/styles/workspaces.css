@@ -1,0 +1,29 @@
+#workspaces {
+	border-radius: 0px 9999px 9999px 0px;
+	margin-left: 0px;
+	padding-left: 0px;
+}
+
+#workspaces button {
+	color: @foreground;
+}
+
+#workspaces button:hover {
+	background: unset;
+	border: none;
+	border-radius: 0px;
+	box-shadow: inset 0px 0px 10px @color8;
+}
+
+#workspaces button.active {
+	color: @color3;
+}
+
+/* For background stuff */
+/*
+#workspaces .workspace-label {
+	background-color: @text;
+	border-radius: 12px;
+	padding: 0px 8px 0px 4px;
+}
+*/

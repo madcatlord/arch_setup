@@ -1,0 +1,11 @@
+{
+	"hyprland/workspaces": {
+		"move-to-monitor": true,
+		"format": "{id} {windows}",
+		"window-rewrite": {
+			"class<firefox>": "󰈹",
+			"class<Alacritty>": ""
+		},
+		"window-rewrite-default": ""
+	}
+}

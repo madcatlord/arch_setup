@@ -1,0 +1,27 @@
+{
+	"pulseaudio#input": {
+		"format": "{format_source}",
+		"format-source": "󰍬",
+		"format-source-muted": "󰍭"
+	},
+	"group/audio-output": {
+		"orientation": "horizontal",
+		"modules": ["pulseaudio#output", "pulseaudio/slider"],
+		"drawer": {
+			"transition-left-to-right": false,
+			"click-to-reveal": true
+		}
+	},
+	"pulseaudio#output": {
+		"format": "{volume}% {icon}",
+		"format-muted": "{volume}% 󰝟",
+		"format-icons": {
+			"default": ["󰕿", "󰖀", "󰕾"]
+		},
+		"tooltip-format": "{desc}",
+		"tooltip": false
+	},
+	"pulseaudio/slider": {
+		"orientation": "horizontal"
+	}
+}

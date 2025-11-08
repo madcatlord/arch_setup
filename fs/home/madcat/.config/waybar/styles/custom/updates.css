@@ -1,0 +1,17 @@
+#custom-updates:hover {
+	box-shadow: inset 0px 0px 10px @color8;
+}
+
+#custom-updates.loading {
+	background-color: @warning;
+	color: @color0;
+}
+
+#custom-updates.error {
+	background-color: @error;
+	color: @foreground;
+}
+
+#custom-updates.rec-update {
+	background-color: @error;
+}

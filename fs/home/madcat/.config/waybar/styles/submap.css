@@ -1,0 +1,7 @@
+#submap {
+	color: @foreground;
+	border-radius: 9999px 0px 0px 9999px;
+	margin-right: 0px;
+	padding-right: 10px;
+	border-right: 1px solid @color3;
+}

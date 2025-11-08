@@ -1,0 +1,7 @@
+{
+	"clock": {
+		"interval": 1,
+		"format": "{:%a %H:%M}",
+		"tooltip-format": "{:%A %d.%m.%Y\n%H:%M:%S -- Week %W}"
+	}
+}

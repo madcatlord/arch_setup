@@ -1,0 +1,47 @@
+@import './styles/battery.css';
+@import './styles/network.css';
+@import './styles/pulseaudio.css';
+@import './styles/submap.css';
+@import './styles/custom/updates.css';
+@import './styles/workspaces.css';
+@import './styles/window.css';
+@import './themes/custom.css';
+@import './themes/wal-theme.css';
+
+* {
+	font-family: "JetBrainsMono NFM", Roboto, Helvetica, Arial, sans-serif;
+	font-size: 14px;
+}
+
+/* Waybar Settings */
+window#waybar {
+	color: @foreground;
+	background-color: transparent;
+}
+
+tooltip {
+	background-color: @color3;
+	border: none;
+}
+
+tooltip label {
+	color: @foreground;
+	text-shadow: none;
+}
+
+/* Settings for every module */
+.module {
+	padding: 0px 16px;
+	margin: 4px 2px 0px 2px;
+
+	background-color: @background;
+	border-radius: 9999px;
+}
+
+.modules-left:first-child {
+	margin-left: 8px;
+}
+
+.modules-right:last-child {
+	margin-right: 8px;
+}

@@ -1,0 +1,12 @@
+[default]
+path = "~/Images/Wallpapers/active"
+duration = "30m"
+sorting = "random"
+
+# What happens to images that are smaller than the display
+mode = "stretch"
+
+# How many wallpapers can max be in the directory. This number NEEDS to be larger than the actual amount
+queue-size = 12 
+
+exec = "~/.config/wpaperd/run-pywal.sh"

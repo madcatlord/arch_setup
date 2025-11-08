@@ -1,0 +1,26 @@
+
+{
+	"battery": {
+		"full-at": 98,
+		"format": "{capacity}% {icon}",
+		"format-plugged": "{capacity}% 󰂄",
+		"format-charging": "{capacity}% 󰂄",
+		"format-time": "{H}:{m}hours",
+		"states": {
+			"high": 100,
+			"mid": 75,
+			"low": 25,
+			"critical": 10
+		},
+		"format-icons": {
+			"high": "󱊣",
+			"mid": "󱊢",
+			"low": "󱊡",
+			"critical": "󱃍"
+		},
+		"tooltip-format": "{timeTo}\n{cycles}RC / {health}% health\n{power}W/h"
+		// "events": {
+		//	"on-discharging-critical": "notify-send 'Battery Critical'"
+		//}
+	}
+}

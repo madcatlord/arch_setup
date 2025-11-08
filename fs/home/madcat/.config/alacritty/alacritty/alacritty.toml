@@ -1,0 +1,10 @@
+[window]
+padding = { x = 6, y = 6 }
+opacity = 0.95
+
+[font]
+normal.family = "JetbrainsMono NFM"
+bold.family = "JetbrainsMono NFM"
+italic.family = "JetbrainsMono NFM"
+bold_italic.family = "JetbrainsMono NFM"
+size = 12

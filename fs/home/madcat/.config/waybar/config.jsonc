@@ -1,0 +1,33 @@
+// -*- mode: jsonc -*-
+{
+	// NOTE: For some reason, globbing doesnt work reliably. So every path needs to be appended manually
+	"include": [
+		"~/.config/waybar/modules/battery.jsonc",
+		"~/.config/waybar/modules/clock.jsonc",
+		"~/.config/waybar/modules/language.jsonc",
+		"~/.config/waybar/modules/network.jsonc",
+		"~/.config/waybar/modules/pulseaudio.jsonc",
+		"~/.config/waybar/modules/submap.jsonc",
+		"~/.config/waybar/modules/workspaces.jsonc",
+		"~/.config/waybar/modules/window.jsonc",
+
+		// CUSTOM MODULES
+		"~/.config/waybar/modules/custom/updates.jsonc"
+	],
+	"modules-left": [
+		"hyprland/submap",
+		"hyprland/workspaces"
+	],
+	"modules-center": [
+		"hyprland/window"
+	],
+	"modules-right": [
+		"custom/updates",
+		"group/audio-output",
+		"pulseaudio#input",
+		"network",
+		"hyprland/language",
+		"battery",
+		"clock"
+	],
+}
