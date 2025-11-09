@@ -2,3 +2,6 @@
 fs/home/madcat/.config/clipse/tmp_files
 fs/home/madcat/.config/clipse/clipboard_history.json
 fs/home/madcat/.config/clipse/clipse.log
+
+# WAYBAR
+fs/home/madcat/.config/waybar/scripts/tmp

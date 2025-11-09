@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ### ATTRIBUTES
-DATA_FILEPATH_RELATIVE="data/updates.json"
+DATA_FILEPATH_RELATIVE="tmp/updates.json"
 TIMEOUT=5
 
 
@@ -33,8 +33,14 @@ toJSON() {
 }
 
 # sends the update signal to waybar, which triggers the re-reading of the data file
+# NOTE TEMPORARY FIX: If waybar does not already run, it will be started. This is neccessary, because for some god forsaken reason the `pkill -RTMIN+1 waybar` command right as waybar is starting kills it. This TEMPORARY fix will make sure that when the update is run the second time, waybar is restarted
 updateModule() {
-	pkill -RTMIN+1 waybar
+	pgrep waybar
+	if [[ $(echo $?) -eq 0 ]]; then
+		pkill -RTMIN+1 waybar
+	else
+		waybar &
+	fi
 }
 
 # Printing temporary LOADING data to storage
