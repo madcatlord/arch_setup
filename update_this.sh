@@ -51,6 +51,13 @@ backup "$HOME/.bash_profile" "$FS_HOME"
 
 
 
+### Updating sourced-scripts
+mkdir -p "$FS_HOME/sourced-scripts"
+backup "$HOME/sourced-scripts/log.sh" "$FS_HOME/sourced-scripts"
+backup "$HOME/sourced-scripts/get-path.sh" "$FS_HOME/sourced-scripts"
+
+
+
 ### Updating .config configs. Doing it one by one, as .config contains a lot of default configs, which I have never touched. I dont want those to conflict with the potentially changed, newer default configs of a later install
 mkdir -p "$FS_HOME/.config"
 backup "$HOME/.config/alacritty" "$FS_HOME/.config/alacritty"

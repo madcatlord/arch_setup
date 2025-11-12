@@ -1,6 +1,6 @@
 {
 	"custom/updates": {
-		"exec": "cat ~/.config/waybar/scripts/tmp/updates.json",
+		"exec": "~/.config/waybar/scripts/count-updates-exec.sh",
 		"exec-on-event": false,
 		"return-type": "json",
 		"interval": "once",

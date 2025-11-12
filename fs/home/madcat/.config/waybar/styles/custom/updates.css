@@ -13,5 +13,6 @@
 }
 
 #custom-updates.rec-update {
-	background-color: @error;
+	color: @color0;
+	background-color: @warning;
 }
