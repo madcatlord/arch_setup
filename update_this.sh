@@ -24,10 +24,10 @@ FS_HOME="$FS_DIR$HOME"
 
 # Makes sure the files at DST are the same as the ones at SRC (which includes deleting those that are present at DST, but not longer are at SRC, which is something cp wouldn't do)
 backup() {
-	local SRC=$1
-	local DST=$2
+	local SRC="$1"
+	local SRC_DIR=$(dirname "$SRC")
 
-	rsync -a --delete "$SRC" "$DST"
+	rsync -a --delete "$SRC" "$FS_DIR/$SRC_DIR/"
 }
 
 
@@ -39,41 +39,41 @@ backup() {
 
 ### Updating pacman stuffs
 mkdir -p "$FS_DIR/etc/pacman.d"
-backup "/etc/pacman.d/hooks" "$FS_DIR/etc/pacman.d"
-backup "/etc/pacman.conf" "$FS_DIR/etc"
+backup "/etc/pacman.d/hooks"
+backup "/etc/pacman.conf"
 
 
 
 ### Updating NetworkManager scripts
 mkdir -p "$FS_DIR/etc/NetworkManager/dispatcher.d"
-backup "/etc/NetworkManager/dispatcher.d/09-timezone.sh" "$FS_DIR/etc/NetworkManager/dispatcher.d"
+backup "/etc/NetworkManager/dispatcher.d/09-timezone.sh"
 
 
 ### Updating .bashrc and .bash_profile
 mkdir -p "$FS_HOME"
-backup "$HOME/.bashrc" "$FS_HOME"
-backup "$HOME/.bash_profile" "$FS_HOME"
+backup "$HOME/.bashrc"
+backup "$HOME/.bash_profile"
 
 
 
 ### Updating sourced-scripts
 mkdir -p "$FS_HOME/sourced-scripts"
-backup "$HOME/sourced-scripts/log.sh" "$FS_HOME/sourced-scripts"
-backup "$HOME/sourced-scripts/get-path.sh" "$FS_HOME/sourced-scripts"
+backup "$HOME/sourced-scripts/log.sh"
+backup "$HOME/sourced-scripts/get-path.sh"
 
 
 
 ### Updating .config configs. Doing it one by one, as .config contains a lot of default configs, which I have never touched. I dont want those to conflict with the potentially changed, newer default configs of a later install
 mkdir -p "$FS_HOME/.config"
-backup "$HOME/.config/alacritty" "$FS_HOME/.config/alacritty"
-backup "$HOME/.config/clipse" "$FS_HOME/.config"
-backup "$HOME/.config/hypr" "$FS_HOME/.config"
-backup "$HOME/.config/nvim" "$FS_HOME/.config"
-backup "$HOME/.config/waybar" "$FS_HOME/.config"
-backup "$HOME/.config/wpaperd" "$FS_HOME/.config"
+backup "$HOME/.config/alacritty"
+backup "$HOME/.config/clipse"
+backup "$HOME/.config/hypr"
+backup "$HOME/.config/nvim"
+backup "$HOME/.config/waybar"
+backup "$HOME/.config/wpaperd"
 
 
 
 ### Updating the hyprland launch script for login-managers
 mkdir -p "$FS_HOME/.local/bin"
-backup "$HOME/.local/bin/hypr-wrapped" "$FS_HOME/.local/bin/"
+backup "$HOME/.local/bin/hypr-wrapped"
