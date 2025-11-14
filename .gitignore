@@ -5,3 +5,6 @@ fs/home/madcat/.config/clipse/clipse.log
 
 # WAYBAR
 fs/home/madcat/.config/waybar/scripts/tmp
+
+# TMP
+fs/home/madcat/.config/hypr/hyprlock.conf

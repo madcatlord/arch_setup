@@ -1,7 +1,9 @@
 #!/bin/bash
 
+source ~/sourced-scripts/get-path.sh
+
 # Execute the update script, making sure that this repo is up to date
-DIR=$(cd -- $(dirname -- ${BASH_SOURCE[0]}) && pwd)
+DIR=$(getScriptPath)
 . "$DIR/update_this.sh"
 EC=$(echo $?)
 
