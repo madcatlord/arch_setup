@@ -93,7 +93,7 @@ if [[ OFFICIAL_EXIT -eq 1 || AUR_EXIT -gt 1 ]]; then
 	updateModule
 
 	log "ERROR: Data fetching was unsuccessful. Exiting with Code 1"
-	exit 1
+	exit 0 # NOTE: Trying to exit with 0, since for some reason waybar doesnt boot up when we exit with 1
 fi
 
 # NOTE subtracting 1 because there always is a final newline which is counted as well

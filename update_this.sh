@@ -44,6 +44,11 @@ backup "/etc/pacman.conf" "$FS_DIR/etc"
 
 
 
+### Updating NetworkManager scripts
+mkdir -p "$FS_DIR/etc/NetworkManager/dispatcher.d"
+backup "/etc/NetworkManager/dispatcher.d/09-timezone.sh" "$FS_DIR/etc/NetworkManager/dispatcher.d"
+
+
 ### Updating .bashrc and .bash_profile
 mkdir -p "$FS_HOME"
 backup "$HOME/.bashrc" "$FS_HOME"
