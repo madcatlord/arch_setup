@@ -49,6 +49,13 @@ mkdir -p "$FS_DIR/etc/NetworkManager/dispatcher.d"
 backup "/etc/NetworkManager/dispatcher.d/09-timezone.sh"
 
 
+
+### Updating systemd stuff
+mkdir -p "$FS_DIR/etc/systemd"
+backup "/etc/systemd/logind.conf"
+
+
+
 ### Updating .bashrc and .bash_profile
 mkdir -p "$FS_HOME"
 backup "$HOME/.bashrc"
