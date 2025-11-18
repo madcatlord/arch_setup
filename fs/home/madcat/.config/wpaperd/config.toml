@@ -9,4 +9,4 @@ mode = "stretch"
 # How many wallpapers can max be in the directory. This number NEEDS to be larger than the actual amount
 queue-size = 12 
 
-exec = "~/.config/wpaperd/run-pywal.sh"
+exec = "~/.config/wpaperd/exec.sh"
