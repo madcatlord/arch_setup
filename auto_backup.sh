@@ -7,6 +7,9 @@ DIR=$(getScriptPath)
 . "$DIR/update_this.sh"
 EC=$(echo $?)
 
+source ~/sourced-scripts/log.sh
+LOG_TO_FILE "$DIR/backup.logs" "UpdateThis exit code: $EC"
+
 # If update failed, terminate this
 if [[ $EC -ne 0 ]]; then
 	exit 1;
@@ -14,6 +17,7 @@ fi
 
 # Update repo
 git add "$DIR"
+LOG_TO_FILE "$DIR/backup.logs" "'git add $DIR' exit code. $?"
 git commit -m "AUTO COMMIT $(date +'%d.%m.%Y')"
 
 if [[ $(echo $?) -eq 0 ]]; then

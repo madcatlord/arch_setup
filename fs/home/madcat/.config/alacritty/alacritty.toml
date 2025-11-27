@@ -1,6 +1,7 @@
 [window]
-padding = { x = 6, y = 6 }
-opacity = 0.95
+padding = { x = 6, y = 3 }
+dynamic_padding = true
+opacity = 0.9
 
 [font]
 normal.family = "JetbrainsMono NFM"

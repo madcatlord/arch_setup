@@ -1,0 +1,14 @@
+return {}
+-- local M = {}
+--
+-- function M.colorscheme()
+-- 	vim.cmd("highlight clear")
+-- 	vim.cmd("syntax reset")
+--
+-- 	vim.o.backgrund = "dark"
+-- 	vim.g.colors_name = "natural-forces"
+--
+-- 	local set = vim.api.nvim_set_hl
+-- end
+--
+-- return M

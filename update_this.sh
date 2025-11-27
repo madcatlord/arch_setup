@@ -56,6 +56,12 @@ backup "/etc/systemd/logind.conf"
 
 
 
+### Updating modprobe.d
+mkdir -p "$FS_DIR/etc/modprobe.d"
+backup "/etc/modprobe.d/iwlwifi.conf"
+
+
+
 ### Updating .bashrc and .bash_profile
 mkdir -p "$FS_HOME"
 backup "$HOME/.bashrc"

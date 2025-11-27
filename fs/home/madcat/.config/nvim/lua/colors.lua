@@ -1,0 +1,1 @@
+/home/madcat/.cache/wal/colors.lua

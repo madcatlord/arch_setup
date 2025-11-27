@@ -1,3 +1,6 @@
+# TMP
+backup.logs
+
 # CLIPSE
 fs/home/madcat/.config/clipse/tmp_files
 fs/home/madcat/.config/clipse/clipboard_history.json

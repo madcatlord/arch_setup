@@ -3,8 +3,8 @@
 }
 
 #custom-updates.loading {
-	background-color: @warning;
-	color: @color0;
+	background-color: @neutral;
+	color: @foreground;
 }
 
 #custom-updates.error {
