@@ -8,7 +8,9 @@ DIR=$(getScriptPath)
 EC=$(echo $?)
 
 source ~/sourced-scripts/log.sh
+LOG_TO_FILE "$DIR/backup.logs" "User performing actions: $USER, ID: $UID"
 LOG_TO_FILE "$DIR/backup.logs" "UpdateThis exit code: $EC"
+LOG_TO_FILE "$DIR/backup.logs" "Pubkey results: $(ssh -vT git@github.com 2>&1 | rg ": loaded pubkey")" # FIX: This shoud show whether or not ssh key works properly
 
 # If update failed, terminate this
 if [[ $EC -ne 0 ]]; then

@@ -22,3 +22,6 @@ export PATH="$HOME/.local/bin:$PATH"
 ### Load Pywal Theme for this terminal
 (cat ~/.cache/wal/sequences &)
 
+### Aliasi ( NOTE: There are some in /etc/bash.bashrc as well)
+alias man=batman
+alias rg=batgrep
