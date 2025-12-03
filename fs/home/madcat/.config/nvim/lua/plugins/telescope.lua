@@ -75,6 +75,7 @@ return {
 
 		-- See `:help telescope.builtin`
 		local builtin = require("telescope.builtin")
+		local ivyTheme = require("telescope.themes").get_ivy
 
 		-- Keymap to easily preview colorschemes. NOTE: that a selected colorscheme is not persistent
 		vim.keymap.set("n", "<leader>cc", function()
@@ -84,11 +85,17 @@ return {
 		-- Keymaps to navigate the workspace
 		vim.keymap.set(
 			"n",
-			"<leader>b",
+			"<leader>wb",
 			"<cmd>Telescope buffers sort_mru=true sort_lastused=true initial_mode=normal theme=ivy<CR>",
 			{ desc = "Show Buffers" }
 		)
-		vim.keymap.set("n", "<leader><leader>", "<cmd>Telescope fd hidden=true theme=ivy<CR>", { desc = "Find Files" })
+		vim.keymap.set("n", "<leader>b", "<cmd>b#<CR>", { desc = "Open Previous [B]uffer" })
+
+		-- Quick Shortcut to look for files in the current project, including hidden files, except for those in the .git directory, because they pollute our shit
+		vim.keymap.set("n", "<leader><leader>", function()
+			builtin.fd(ivyTheme({ hidden = true, file_ignore_patterns = { "%.git/" } }))
+		end, { desc = "Find Files" })
+
 		vim.keymap.set(
 			"n",
 			"<leader>wh",

@@ -6,7 +6,7 @@
 #	exit 1
 #fi
 
-BACKUP_DIR="$HOME/arch_setup/pkgs"
+BACKUP_DIR="/home/madcat/arch_setup/pkgs"
 OFFICIAL_FILENAME="official.txt"
 AUR_FILENAME="aur.txt"
 

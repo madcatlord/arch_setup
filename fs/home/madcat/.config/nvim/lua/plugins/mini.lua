@@ -8,7 +8,7 @@ return { -- Collection of various small independent plugins/modules
 				["("] = { action = "open", pair = "()", neigh_pattern = "[^\\]%W" },
 				["["] = { action = "open", pair = "[]", neigh_pattern = "[^\\]%W" },
 				["{"] = { action = "open", pair = "{}", neigh_pattern = "[^\\]%W" },
-				["<"] = { action = "closeopen", pair = "<>", neigh_pattern = "[^\\]%W" },
+				["<"] = { action = "closeopen", pair = "<>", neigh_pattern = "%w%W" }, -- This one is relevant because of <= and >= comparisons. mini.pairs might not be enough here
 			},
 		})
 		require("mini.comment").setup({

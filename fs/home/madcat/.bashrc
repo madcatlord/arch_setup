@@ -19,6 +19,13 @@ PROMPT_COMMAND='__git_ps1 "\[\e[31m\]\u\[\e[0m\]@\h \[\e[30;47m\][\w]\[\e[0m\]\[
 export PATH="$HOME/.local/bin:$PATH"
 
 
+### This is for enabling auto-completion for uv (the python package manager)
+eval "$(uv generate-shell-completion bash)"
+
+### This is for adding direnv to each cd call
+eval "$(direnv hook bash)"
+
+
 ### Load Pywal Theme for this terminal
 (cat ~/.cache/wal/sequences &)
 

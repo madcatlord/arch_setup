@@ -1,0 +1,12 @@
+#!/bin/bash
+
+CWD=$(pwd)
+
+write() {
+	echo "$1" >> "$CWD/.envrc"
+}
+
+write "export VIRTUAL_ENV=$CWD/.venv"
+write "PATH_add \"\$VIRTUAL_ENV/bin\""
+
+direnv allow "$CWD"

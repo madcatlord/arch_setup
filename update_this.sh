@@ -62,17 +62,17 @@ backup "/etc/modprobe.d/iwlwifi.conf"
 
 
 
-### Updating .bashrc and .bash_profile
+### Updating files in ~
 mkdir -p "$FS_HOME"
 backup "$HOME/.bashrc"
 backup "$HOME/.bash_profile"
+backup "$HOME/pyrightconfig.json"
 
 
 
 ### Updating sourced-scripts
 mkdir -p "$FS_HOME/sourced-scripts"
-backup "$HOME/sourced-scripts/log.sh"
-backup "$HOME/sourced-scripts/get-path.sh"
+backup "$HOME/sourced-scripts"
 
 
 
@@ -90,3 +90,4 @@ backup "$HOME/.config/wpaperd"
 ### Updating the hyprland launch script for login-managers
 mkdir -p "$FS_HOME/.local/bin"
 backup "$HOME/.local/bin/hypr-wrapped"
+backup "$HOME/.local/bin/autoVenv"

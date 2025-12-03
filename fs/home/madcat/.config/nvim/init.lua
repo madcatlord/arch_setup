@@ -192,6 +192,8 @@ require("lazy").setup({
 		dependencies = { "nvim-lua/plenary.nvim" },
 		opts = { signs = false },
 	},
+
+	-- Sort recently used files by an algorithm that takes frequency and recency of use into account
 	{
 		"nvim-telescope/telescope-frecency.nvim",
 		config = function()
@@ -208,7 +210,11 @@ require("lazy").setup({
 	-- you can continue same window with `<space>sr` which resumes last telescope search
 })
 
+-- Set colorscheme
 vim.cmd.colorscheme("gruvbox")
+
+-- Custom script that introduces a way to execute (run) code files
+require("executer")
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
