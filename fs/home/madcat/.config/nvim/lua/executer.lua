@@ -36,9 +36,20 @@ vim.api.nvim_create_autocmd("FileType", {
 			os.execute(string.format('wtype "uv run %s -- "', file))
 		end, { desc = "[E]xecute Current File With [A]rgs", buffer = bufnr })
 
-		-- NOTE: This does NOT work. It should run the root file of the project
+		-- NOTE: This runs the main.py file at the root of the python project (name needs to match)
 		vim.keymap.set("n", "<leader>er", function()
 			local cwd = vim.fn.getcwd()
+
+			local venv_path = vim.fn.getenv("VIRTUAL_ENV")
+			if not venv_path or venv_path == "" then
+				return nil
+			end
+			--
+			-- remove trailing slash (optional)
+			venv_path = venv_path:gsub("[/\\]+$", "")
+			-- strip last directory
+			local root_dir = venv_path:match("^(.*)[/\\][^/\\]+$")
+
 			vim.fn.jobstart({
 				"alacritty",
 				"--working-directory",
@@ -46,7 +57,7 @@ vim.api.nvim_create_autocmd("FileType", {
 				"--command",
 				"sh",
 				"-c",
-				"uv run $(uv project script)" .. aktc,
+				"uv run " .. root_dir .. "/main.py" .. aktc,
 			}, { detach = true })
 		end, { desc = "[E]xecute [R]oot File", buffer = bufnr })
 	end,

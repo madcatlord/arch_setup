@@ -1,5 +1,6 @@
 {
+	"typeCheckingMode": "off",
 	"reportUnusedCallResult": false,
 	"reportUnknownMemberType": false,
-	"reportUnknownArgumentType": false
+	"reportUnknownArgumentType": false,
 }

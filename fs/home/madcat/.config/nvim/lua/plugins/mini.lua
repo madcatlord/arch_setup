@@ -19,6 +19,7 @@ return { -- Collection of various small independent plugins/modules
 			},
 		})
 		require("mini.files").setup({})
+		require("mini.icons").setup({})
 
 		-- Better Around/Inside textobjects
 		--

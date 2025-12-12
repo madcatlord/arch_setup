@@ -1,4 +1,22 @@
+-- Keymap to open diagnostic screen
 vim.keymap.set("n", "<leader>d", "<cmd>lua vim.diagnostic.open_float()<CR>", { desc = "Show [D]iagnostic Message" })
+
+-- Keymap to close the diagnostic screen by pressing ESC
+local function close_floating()
+	local inactive_floating_wins = vim.fn.filter(vim.api.nvim_list_wins(), function(k, v)
+		local file_type = vim.api.nvim_buf_get_option(vim.api.nvim_win_get_buf(v), "filetype")
+		return vim.api.nvim_win_get_config(v).relative ~= ""
+			and v ~= vim.api.nvim_get_current_win()
+			and file_type ~= "hydra_hint"
+	end)
+	for _, w in ipairs(inactive_floating_wins) do
+		pcall(vim.api.nvim_win_close, w, false)
+	end
+end
+vim.keymap.set("n", "<esc>", function()
+	vim.cmd("noh")
+	close_floating()
+end, { desc = "Show [D]iagnostic Message" })
 
 return {
 	-- Main LSP Configuration
@@ -229,7 +247,15 @@ return {
 		local servers = {
 			-- clangd = {},
 			-- gopls = {},
-			basedpyright = {},
+			basedpyright = {
+				-- NOTE: It's actually impossible to disable pyright diagnostics, this doesnt work
+				settings = {
+					disableOrganizeImports = true, -- We use Ruff instead
+					analysis = {
+						ignore = { "*" },
+					},
+				},
+			},
 			ruff = {},
 			-- rust_analyzer = {},
 			-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -256,6 +282,17 @@ return {
 				},
 			},
 		}
+
+		-- Disabling ruffs linter FIX: Just because we cant figure out how to disable pyright
+		-- vim.lsp.config.ruff = {
+		-- 	init_options = {
+		-- 		settings = {
+		-- 			lint = {
+		-- 				enable = false, -- use basedpyright for linting, ruff for formatting
+		-- 			},
+		-- 		},
+		-- 	},
+		-- }
 
 		-- Ensure the servers and tools above are installed
 		--

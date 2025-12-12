@@ -2,4 +2,3 @@ clipse
 mpvpaper
 python-pywal16
 yay
-yay-debug

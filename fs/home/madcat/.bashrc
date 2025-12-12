@@ -32,3 +32,7 @@ eval "$(direnv hook bash)"
 ### Aliasi ( NOTE: There are some in /etc/bash.bashrc as well)
 alias man=batman
 alias rg=batgrep
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

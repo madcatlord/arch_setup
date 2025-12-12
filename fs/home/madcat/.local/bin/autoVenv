@@ -1,5 +1,12 @@
 #!/bin/bash
 
+### PURPOSE
+### 
+### This script creates a .envrc file in the directory the user is currently in.
+### It then populates it with the necessary lines to automatically activate the .venv directory (using direnv)
+### when cd'ing into the directory
+
+
 CWD=$(pwd)
 
 write() {

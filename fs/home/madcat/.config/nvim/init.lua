@@ -5,6 +5,10 @@ vim.g.maplocalleader = " "
 
 vim.g.have_nerd_font = true
 
+-- This makes sure that hyprland can identify neovim windows
+vim.o.title = true
+vim.o.titlestring = "neovim"
+
 -- [[ Setting options ]]
 -- See `:help vim.o`
 --	For more options, you can see `:help option-list`
@@ -82,7 +86,9 @@ vim.o.confirm = false
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --	See `:help hlsearch`
-vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+-- NOTE: Moved this to the lsp-config file, because there the ESC functionality is extended
+-- TODO: Should group all keymaps in their own file
+-- vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Diagnostic keymaps
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
@@ -190,7 +196,18 @@ require("lazy").setup({
 		"folke/todo-comments.nvim",
 		event = "VimEnter",
 		dependencies = { "nvim-lua/plenary.nvim" },
-		opts = { signs = false },
+		opts = {
+			signs = false,
+			highlight = { max_line_len = 1024 },
+			keywords = {
+				TMP = { icon = "", color = "temporary" },
+				EXP = { icon = "󰙨", color = "experimental" },
+			},
+			colors = {
+				temporary = "#D9A7B5",
+				experimental = "#5A3E85",
+			},
+		},
 	},
 
 	-- Sort recently used files by an algorithm that takes frequency and recency of use into account
@@ -215,6 +232,13 @@ vim.cmd.colorscheme("gruvbox")
 
 -- Custom script that introduces a way to execute (run) code files
 require("executer")
+
+------- KEYMAPS CUSTOM --------
+-- Open docs window and instantly tab into it (overrides default behaviour for K, where it does not tab into it)
+vim.keymap.set("n", "K", function()
+	vim.lsp.buf.hover({ border = "rounded" })
+	vim.lsp.buf.hover({ border = "rounded" })
+end, { desc = "Show Documentation" })
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
