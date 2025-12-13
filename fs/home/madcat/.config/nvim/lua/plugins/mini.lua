@@ -3,14 +3,15 @@ vim.keymap.set("n", "<leader>wf", "<cmd>lua MiniFiles.open()<CR>", { desc = "Ope
 return { -- Collection of various small independent plugins/modules
 	"nvim-mini/mini.nvim",
 	config = function()
-		require("mini.pairs").setup({
-			mappings = {
-				["("] = { action = "open", pair = "()", neigh_pattern = "[^\\]%W" },
-				["["] = { action = "open", pair = "[]", neigh_pattern = "[^\\]%W" },
-				["{"] = { action = "open", pair = "{}", neigh_pattern = "[^\\]%W" },
-				["<"] = { action = "closeopen", pair = "<>", neigh_pattern = "%w%W" }, -- This one is relevant because of <= and >= comparisons. mini.pairs might not be enough here
-			},
-		})
+		-- NOTE: This kind of sucks because it does not recognize whether or not a line already has enough paranthesis, and similar nicessities
+		-- require("mini.pairs").setup({
+		-- 	mappings = {
+		-- 		["("] = { action = "open", pair = "()", neigh_pattern = "[^\\]%W" },
+		-- 		["["] = { action = "open", pair = "[]", neigh_pattern = "[^\\]%W" },
+		-- 		["{"] = { action = "open", pair = "{}", neigh_pattern = "[^\\]%W" },
+		-- 		["<"] = { action = "closeopen", pair = "<>", neigh_pattern = "%w%W" }, -- This one is relevant because of <= and >= comparisons. mini.pairs might not be enough here
+		-- 	},
+		-- })
 		require("mini.comment").setup({
 			mappings = {
 				comment_line = "gcc",

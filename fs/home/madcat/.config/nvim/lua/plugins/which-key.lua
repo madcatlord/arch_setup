@@ -51,6 +51,7 @@ return { -- Useful plugin to show you pending keybinds.
 			{ "gr", group = "Code Actions", mode = { "n" } },
 			{ "<leader>w", group = "Navigate [W]orkspace", mode = { "n" } },
 			{ "<leader>e", group = "[E]xecute Code", mode = { "n" } },
+			{ "<leader>z", group = "[Z]en", mode = { "n" } },
 		},
 	},
 }

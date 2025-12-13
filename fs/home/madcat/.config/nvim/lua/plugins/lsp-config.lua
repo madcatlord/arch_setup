@@ -257,6 +257,13 @@ return {
 				},
 			},
 			ruff = {},
+			marksman = {},
+			harper_ls = {
+				filetypes = { "markdown" },
+				root_dir = function()
+					print("THIS DOES SOMETHING")
+				end,
+			},
 			-- rust_analyzer = {},
 			-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
 			--
@@ -293,6 +300,63 @@ return {
 		-- 		},
 		-- 	},
 		-- }
+
+		-- Only here can we set settings for harper, not up above
+		vim.lsp.config.harper_ls = {
+			settings = {
+				["harper-ls"] = {
+					linters = {
+						SentenceCapitalization = false,
+						SpellCheck = true,
+					},
+				},
+			},
+			-- This makes sure that harper only starts if there is a .lang file in the project root, which contains one of the supported languages. This way, we avoid harper triggering on words of files written in another language
+			root_dir = function(bufnr, on_dir)
+				local enable_harper = function()
+					on_dir(vim.fn.getcwd())
+				end
+
+				-- Gets the path of the .lang file, if it exists. If a .git directory exists, also gets its path
+				local l = require("lspconfig")
+				local filename = vim.api.nvim_buf_get_name(bufnr)
+				local root = l.util.root_pattern({ ".lang" })(filename)
+				local max_root = l.util.root_pattern({ ".git" })(filename)
+
+				-- If there is no .lang file, then harper should not be activated
+				if not root then
+					return
+				end
+
+				-- Read contents of the .lang file. If it doesnt match what harper supports, terminate this function
+				local file = io.open(root .. "/.lang", "r")
+				if file then
+					local content = file:read("*a")
+
+					-- This is the case if file turns out to be a directory
+					if not content then
+						return
+					end
+
+					-- Harper currently only supports english
+					if not string.find(content, "en") then
+						return
+					end
+				end
+
+				-- If there is a .git dir, it needs to be in the same directory as .lang in order to enable harper
+				if max_root and max_root == root then
+					enable_harper()
+					return
+				end
+
+				-- If there is no .git dir, but a .lang could be found, enable harper.
+				if not max_root and root then
+					enable_harper()
+					return
+				end
+			end,
+		}
 
 		-- Ensure the servers and tools above are installed
 		--
