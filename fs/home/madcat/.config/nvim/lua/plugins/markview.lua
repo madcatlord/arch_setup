@@ -4,6 +4,8 @@ vim.api.nvim_create_autocmd("FileType", {
 		local opts = { buffer = true, noremap = true, silent = true, expr = true }
 		vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", opts)
 		vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", opts)
+		vim.keymap.set("n", "0", "g0")
+		vim.keymap.set("n", "$", "g$")
 	end,
 })
 

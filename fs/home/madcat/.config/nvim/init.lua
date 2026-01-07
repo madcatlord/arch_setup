@@ -20,6 +20,8 @@ vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 vim.o.expandtab = false
 
+-- vim.keymap.set("x", ">", ">gv", {})
+
 -- Don't show the mode, since it's already in the status line
 vim.o.showmode = false
 
@@ -33,6 +35,7 @@ end)
 
 -- Enable break indent
 vim.o.breakindent = true
+vim.o.breakindentopt = "list:-1" -- This makes bullet points and the like have their wrapped lines appear not beneath the bullet point, but rather the first character after the actual bullet point
 vim.o.wrap = true
 vim.o.linebreak = true
 
@@ -239,6 +242,14 @@ vim.keymap.set("n", "K", function()
 	vim.lsp.buf.hover({ border = "rounded" })
 	vim.lsp.buf.hover({ border = "rounded" })
 end, { desc = "Show Documentation" })
+
+-- Keep selection when changing indentation while in any visual mode
+vim.keymap.set("x", "<", "<gv")
+vim.keymap.set("x", ">", ">gv")
+
+-- Go to error, primarily intended for use with harper spelling errors
+vim.keymap.set("n", "ghb", vim.diagnostic.goto_prev, { desc = "Previous Error" })
+vim.keymap.set("n", "ghn", vim.diagnostic.goto_next, { desc = "Next Error" })
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

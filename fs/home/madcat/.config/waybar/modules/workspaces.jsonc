@@ -4,7 +4,9 @@
 		"format": "{id} {windows}",
 		"window-rewrite": {
 			"class<firefox>": "󰈹",
-			"class<Alacritty>": ""
+			"class<Alacritty>": "",
+			"class<org.godotengine.Editor>": "", // NOTE: Only Editor, not Game debugger
+			"class<org.godotengine.ProjectManager>": ""
 		},
 		"window-rewrite-default": ""
 	}

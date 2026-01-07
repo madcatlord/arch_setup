@@ -205,7 +205,7 @@ return {
 		vim.diagnostic.config({
 			severity_sort = true,
 			float = { border = "rounded", source = "if_many" },
-			underline = { severity = vim.diagnostic.severity.ERROR },
+			-- underline = { severity = vim.diagnostic.severity.ERROR },
 			signs = vim.g.have_nerd_font and {
 				text = {
 					[vim.diagnostic.severity.ERROR] = "󰅚 ",
@@ -260,10 +260,8 @@ return {
 			marksman = {},
 			harper_ls = {
 				filetypes = { "markdown" },
-				root_dir = function()
-					print("THIS DOES SOMETHING")
-				end,
 			},
+			vtsls = {},
 			-- rust_analyzer = {},
 			-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
 			--
@@ -308,6 +306,8 @@ return {
 					linters = {
 						SentenceCapitalization = false,
 						SpellCheck = true,
+						AvoidCurses = false,
+						LetConfusion = false,
 					},
 				},
 			},

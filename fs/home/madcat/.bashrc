@@ -1,6 +1,9 @@
 ### Loading the git script, that allows the fetching of the current branch name
 . /usr/share/git/completion/git-prompt.sh
 
+### Loading the git script that allows for autocomplete on branch names
+. /usr/share/git/completion/git-completion.bash
+
 ### Setting the Comandline Design ###
 FINAL_CHAR="$"
 if [ $EUID -eq 0 ]; then
@@ -18,6 +21,11 @@ PROMPT_COMMAND='__git_ps1 "\[\e[31m\]\u\[\e[0m\]@\h \[\e[30;47m\][\w]\[\e[0m\]\[
 ### Adding ~/.local/bin to Path
 export PATH="$HOME/.local/bin:$PATH"
 
+### ANDROID_HOME for gradlew
+export ANDROID_HOME="$HOME/Android/Sdk"
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
 
 ### This is for enabling auto-completion for uv (the python package manager)
 eval "$(uv generate-shell-completion bash)"
@@ -33,6 +41,7 @@ eval "$(direnv hook bash)"
 alias man=batman
 alias rg=batgrep
 
+### Setup NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

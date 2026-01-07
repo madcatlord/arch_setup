@@ -32,8 +32,15 @@ backup() {
 
 
 
+### Removing backup directory in order to make sure stuff is actually deleted
+rm -r $FS_DIR
+echo "Deletion of backup-dir: $?"
+mkdir $FS_DIR
+
+
+
 ### Updating the packages installed from the official repo and AUR
-# NOTE this is done via a pacman hook and thus doesn't need to be done here
+# NOTE: this is done via a pacman hook and thus doesn't need to be done here
 
 
 

@@ -66,15 +66,23 @@ vim.api.nvim_create_autocmd({ "BufEnter", "ModeChanged" }, {
 	callback = function(args)
 		local old_mode = args.event == "ModeChanged" and vim.v.event.old_mode or ""
 		local new_mode = args.event == "ModeChanged" and vim.v.event.new_mode or ""
+		local do_update = false
+
 		-- Only update if ModeChanged is relevant (e.g., leaving LazyGit)
 		if args.event == "ModeChanged" then
 			-- Get buffer filetype
 			local buf_ft = vim.bo.filetype
 			-- Only update when leaving `snacks_terminal` (LazyGit)
 			if buf_ft == "snacks_terminal" or old_mode:match("^t") or new_mode:match("^n") then
-				update_winbar()
+				do_update = true
 			end
 		else
+			do_update = true
+		end
+
+		-- print("BUFS: " .. args.buf .. " " .. args.event .. " " .. args.file .. " " .. args.id)
+		-- This should prevent sidebars from no-neck-pain to have winbars FIX: But it doesnt, I think thats because winbar is not buffer specific, but rather is set for every buffer, thusly the main file sets the winbar, and the side-buffers therefore still show it
+		if do_update and args.file ~= "" then
 			update_winbar()
 		end
 	end,

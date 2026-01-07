@@ -1,0 +1,102 @@
+RAW (Window):
+{
+    "address": "0x55b1be826e70",
+    "mapped": true,
+    "hidden": false,
+    "at": [140, 0],
+    "size": [999, 720],
+    "workspace": {
+        "id": 3,
+        "name": "3"
+    },
+    "floating": true,
+    "pseudo": false,
+    "monitor": 0,
+    "class": "jetbrains-studio",
+    "title": "Settings",
+    "initialClass": "jetbrains-studio",
+    "initialTitle": "Settings",
+    "pid": 32461,
+    "xwayland": false,
+    "pinned": false,
+    "fullscreen": 0,
+    "fullscreenClient": 0,
+    "grouped": [],
+    "tags": [],
+    "swallowing": "0x0",
+    "focusHistoryID": 0,
+    "inhibitingIdle": false,
+    "xdgTag": "",
+    "xdgDescription": ""
+}
+
+RAW (Monitor):
+{
+  "id": 0,
+  "name": "eDP-1",
+  "description": "AU Optronics 0x61ED",
+  "make": "AU Optronics",
+  "model": "0x61ED",
+  "serial": "",
+  "width": 1920,
+  "height": 1080,
+  "physicalWidth": 340,
+  "physicalHeight": 190,
+  "refreshRate": 60.05200,
+  "x": 0,
+  "y": 0,
+  "activeWorkspace": {
+    "id": 3,
+    "name": "3"
+  },
+  "specialWorkspace": {
+    "id": 0,
+    "name": ""
+  },
+  "reserved": [
+    0,
+    38,
+    0,
+    0
+  ],
+  "scale": 1.50,
+  "transform": 0,
+  "focused": true,
+  "dpmsStatus": true,
+  "vrr": false,
+  "solitary": "0",
+  "solitaryBlockedBy": [
+    "WINDOWED",
+    "CANDIDATE"
+  ],
+  "activelyTearing": false,
+  "tearingBlockedBy": [
+    "NOT_TORN",
+    "USER",
+    "CANDIDATE"
+  ],
+  "directScanoutTo": "0",
+  "directScanoutBlockedBy": [
+    "USER",
+    "SW",
+    "CANDIDATE"
+  ],
+  "disabled": false,
+  "currentFormat": "XRGB8888",
+  "mirrorOf": "none",
+  "availableModes": [
+    "1920x1080@60.05Hz"
+  ],
+  "colorManagementPreset": "srgb",
+  "sdrBrightness": 1.00,
+  "sdrSaturation": 1.00,
+  "sdrMinLuminance": 0.20,
+  "sdrMaxLuminance": 80
+}
+Window:
+Name: "Settings"
+Y: 0, Height: 720
+
+Monitor:
+Y: 0, Height: 720
+999 / 720
