@@ -4,7 +4,9 @@ source ~/sourced-scripts/get-path.sh
 
 # Execute the update script, making sure that this repo is up to date
 DIR=$(getScriptPath)
-. "$DIR/update_this.sh"
+cd $DIR
+
+$DIR/update_this.sh
 EC=$(echo $?)
 
 source ~/sourced-scripts/log.sh
