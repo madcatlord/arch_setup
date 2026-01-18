@@ -6,7 +6,11 @@
 			"class<firefox>": "󰈹",
 			"class<Alacritty>": "",
 			"class<org.godotengine.Editor>": "", // NOTE: Only Editor, not Game debugger
-			"class<org.godotengine.ProjectManager>": ""
+			"class<org.godotengine.ProjectManager>": "",
+			"class<jetbrains-studio>": "",
+			"class<Emulator>": "",
+			"class<Waydroid>": "",
+			"class<waydroid.*>": ""
 		},
 		"window-rewrite-default": ""
 	}

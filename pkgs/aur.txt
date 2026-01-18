@@ -1,5 +1,6 @@
 android-studio
 clipse
+google-chrome
 mpvpaper
 python-pywal16
 yay

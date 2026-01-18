@@ -89,6 +89,7 @@ backup "$HOME/.config/alacritty"
 backup "$HOME/.config/clipse"
 backup "$HOME/.config/hypr"
 backup "$HOME/.config/nvim"
+backup "$HOME/.config/rofi"
 backup "$HOME/.config/waybar"
 backup "$HOME/.config/wpaperd"
 

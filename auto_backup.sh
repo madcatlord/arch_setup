@@ -14,7 +14,13 @@ LOG_TO_FILE "$DIR/backup.logs" "Pubkey results: $(ssh -vT git@github.com 2>&1 | 
 
 # If update failed, terminate this
 if [[ $EC -ne 0 ]]; then
-	exit 1;
+	exit 1
+fi
+
+# Check for internet connection
+if ! ping -c 1 8.8.8.8; then
+	LOG_TO_FILE "$DIR/backup.logs" "No internet connection."
+	exit 1
 fi
 
 # Update repo

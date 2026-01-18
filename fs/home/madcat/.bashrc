@@ -39,7 +39,13 @@ eval "$(direnv hook bash)"
 
 ### Aliasi ( NOTE: There are some in /etc/bash.bashrc as well)
 alias man=batman
-alias rg=batgrep
+alias brg=batgrep
+
+# Start a new terminal at the current working directory. The new terminal is completely detached from the calling one
+# NOTE: Not technically an alias, but does the same thing. Needs to be a function for pwd to expand properly
+t() {
+	setsid -f alacritty --working-directory "$(pwd)" > /dev/null 2>&1
+}
 
 ### Setup NVM
 export NVM_DIR="$HOME/.nvm"
