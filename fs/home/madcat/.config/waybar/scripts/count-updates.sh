@@ -20,7 +20,7 @@ if [ ! -f "$DATA_FILEPATH" ]; then
 	mkdir -p $(dirname "$DATA_FILEPATH")
 fi
 
-# TEMPORARY log function for debugging purposes
+# TMP: log function for debugging purposes
 log() {
 	LOG_TO_FILE "$SCRIPT_DIR/tmp/count-updates.log" "$1"
 }
@@ -85,7 +85,7 @@ fi
 log "Fetching Data: Done"
 
 # Making sure the request was successful
-# NOTE AUR_EXIT exits with 1 if nothing was found
+# NOTE: AUR_EXIT exits with 1 if nothing was found
 if [[ OFFICIAL_EXIT -eq 1 || AUR_EXIT -gt 1 ]]; then
 	TOOLTIP="EXIT_CODE_PAC: $OFFICIAL_EXIT\nEXIT_CODE_AUR: $AUR_EXIT"
 
@@ -96,10 +96,10 @@ if [[ OFFICIAL_EXIT -eq 1 || AUR_EXIT -gt 1 ]]; then
 	exit 1
 fi
 
-# NOTE subtracting 1 because there always is a final newline which is counted as well
+# NOTE: Counting the lines starting with an alphanumeric character. Only this way do we get the correct line count and thusly the amount of updates
 log "Calculating: Package counts"
-AMT_OFFICIAL=$(($(echo "$OFFICIAL" | wc -l) - 1))
-AMT_AUR=$(($(echo "$AUR" | wc -l) - 1))
+AMT_OFFICIAL=$(grep -c "^[[:alnum:]]" <<< "$OFFICIAL")
+AMT_AUR=$(grep -c "^[[:alnum:]]" <<< "$AUR")
 log "Calculating: Done"
 
 # Getting all the major versions. Every second entry is the new major version
