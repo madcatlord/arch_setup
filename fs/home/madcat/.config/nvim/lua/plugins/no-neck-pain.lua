@@ -6,11 +6,20 @@ vim.api.nvim_create_autocmd("BufEnter", {
 		if vim.bo[event.buf].buftype ~= "" then
 			return
 		end
-		if vim.bo[event.buf].filetype ~= "markdown" then
-			return
+
+		local ft = vim.bo[event.buf].filetype
+
+		-- NOTE: Since we'd usually be working on an Android project if these filetypes come up, this makes sure that the sidebuffers are aligned in a way that the emulator can float on the right side without obstructing view
+		if ft == "typescriptreact" or ft == "typescript" then
+			require("no-neck-pain").config.buffers.left.enabled = false
+			require("no-neck-pain").config.width = 65
+			require("no-neck-pain").enable()
 		end
 
-		require("no-neck-pain").enable()
+		if ft == "markdown" then
+			require("no-neck-pain").enable()
+			return
+		end
 	end,
 })
 

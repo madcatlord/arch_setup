@@ -4,6 +4,7 @@ bat-extras
 boost
 cyme
 direnv
+docker
 dunst
 fastfetch
 fd

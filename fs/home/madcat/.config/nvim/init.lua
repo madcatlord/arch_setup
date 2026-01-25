@@ -167,6 +167,9 @@ require("lazy").setup({
 				["shiftwidth"] = 4,
 				["expandtab"] = false,
 			},
+			-- EXP: This does not really seem needed
+			-- NOTE: This is necessary since guess-indent doesn't fuck with the builtin nvim and treesitters indention system, which we need for proper JSX indention... ALLEGEDLY, not sure if this is actually any issue
+			-- filetype_exclude = { "javascriptreact", "typescriptreact" },
 		},
 	},
 	{
@@ -250,6 +253,15 @@ vim.keymap.set("x", ">", ">gv")
 -- Go to error, primarily intended for use with harper spelling errors
 vim.keymap.set("n", "ghb", vim.diagnostic.goto_prev, { desc = "Previous Error" })
 vim.keymap.set("n", "ghn", vim.diagnostic.goto_next, { desc = "Next Error" })
+
+-- Overwrite keymaps which are set from plugins
+vim.api.nvim_create_autocmd("User", {
+	pattern = "VeryLazy",
+	callback = function()
+		-- Autlist overwrites the default redo command, so here we reinstutate it
+		vim.keymap.set("n", "<C-r>", "<C-r>", { noremap = true })
+	end,
+})
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

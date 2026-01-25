@@ -2,16 +2,17 @@
 	"hyprland/workspaces": {
 		"move-to-monitor": true,
 		"format": "{id} {windows}",
+		"window-rewrite-default": "",
 		"window-rewrite": {
 			"class<firefox>": "󰈹",
 			"class<Alacritty>": "",
 			"class<org.godotengine.Editor>": "", // NOTE: Only Editor, not Game debugger
 			"class<org.godotengine.ProjectManager>": "",
-			"class<jetbrains-studio>": "",
-			"class<Emulator>": "",
-			"class<Waydroid>": "",
-			"class<waydroid.*>": ""
-		},
-		"window-rewrite-default": ""
+			"class<jetbrains-studio>": "", // Android Studio
+			"class<Emulator>": "", // Android Emulator
+			"class<Waydroid>": "", // Waydroid when started normally
+			"class<waydroid.*>": "", // Waydroid when started via app launch
+			"class<chrome-localhost__debugger-frontend.*>": "" // Debugger for react-native
+		}
 	}
 }
