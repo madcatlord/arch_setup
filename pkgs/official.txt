@@ -5,6 +5,7 @@ boost
 cyme
 direnv
 docker
+docker-compose
 dunst
 fastfetch
 fd
@@ -21,6 +22,8 @@ man-pages
 mesa-utils
 obsidian
 pacman-contrib
+python-build
+python-installer
 reflector
 rofi
 sddm
