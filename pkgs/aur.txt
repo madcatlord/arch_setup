@@ -1,6 +1,8 @@
 android-studio
 clipse
 google-chrome
+mongosh-bin
+mongosh-bin-debug
 mpvpaper
 python-pywal16
 yay
