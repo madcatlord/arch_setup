@@ -7,6 +7,7 @@ direnv
 docker
 docker-compose
 dunst
+ex-vi-compat
 fastfetch
 fd
 firefox
@@ -29,7 +30,6 @@ tealdeer
 terminus-font
 ttf-jetbrains-mono-nerd
 unzip
-vi
 waybar
 waydroid
 wpaperd
