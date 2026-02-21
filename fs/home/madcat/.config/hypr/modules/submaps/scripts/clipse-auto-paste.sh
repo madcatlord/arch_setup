@@ -7,6 +7,9 @@ ACTIVE_WINDOW=$(hyprctl activewindow -j | jq -r '.title')
 
 if [[ $ACTIVE_WINDOW == "neovim" ]]; then
 	wtype -k p
+elif [[ $ACTIVE_WINDOW == "Alacritty" ]]; then
+	# This looks like much, but its just ctrl+shift+v, since thats what you need to do in the terminal. I also let it press the right arrow key afterwards, in order to remove the highlighting that Alacritty automaticall adds
+	wtype -M ctrl -M shift -k v -m ctrl -m shift -k right
 else
 	wtype -M ctrl -k v -m ctrl
 fi
