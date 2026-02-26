@@ -19,7 +19,9 @@ end
 return {
 	"nvim-treesitter/nvim-treesitter-context",
 	config = function()
-		require("treesitter-context").setup()
+		require("treesitter-context").setup({
+			max_lines = 5,
+		})
 		--
 		-- Set the hl colors of the context
 		set_sep()
