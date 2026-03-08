@@ -19,6 +19,7 @@ hyprlock
 hyprpolkitagent
 hyprshot
 intel-ucode
+kdeconnect
 man-pages
 mesa-utils
 obsidian
