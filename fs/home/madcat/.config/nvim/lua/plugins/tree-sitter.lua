@@ -1,3 +1,12 @@
+-- NOTE: This effectively disables folding for .tsx files
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "typescriptreact", -- this is TSX
+	callback = function()
+		vim.opt_local.foldlevelstart = 16
+		vim.opt_local.foldlevel = 16
+	end,
+})
+
 return { -- Highlight, edit, and navigate code
 	"nvim-treesitter/nvim-treesitter",
 	build = ":TSUpdate",

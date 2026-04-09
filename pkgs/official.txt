@@ -2,6 +2,7 @@ alacritty
 base
 bat-extras
 boost
+brightnessctl
 cyme
 direnv
 docker
