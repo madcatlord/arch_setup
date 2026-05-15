@@ -21,6 +21,7 @@ hyprpolkitagent
 hyprshot
 intel-ucode
 kdeconnect
+libreoffice-still
 man-pages
 mesa-utils
 obsidian
