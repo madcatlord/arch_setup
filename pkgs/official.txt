@@ -14,6 +14,7 @@ fd
 firefox
 go
 godot
+htop
 hypridle
 hyprland
 hyprlock
@@ -24,6 +25,7 @@ kdeconnect
 libreoffice-still
 man-pages
 mesa-utils
+nmap
 obsidian
 pacman-contrib
 reflector
