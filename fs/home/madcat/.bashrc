@@ -41,6 +41,7 @@ eval "$(direnv hook bash)"
 alias man="batman"
 alias brg="batgrep"
 alias dcp="docker compose"
+alias zed="zeditor"
 
 # Start a new terminal at the current working directory. The new terminal is completely detached from the calling one
 # NOTE: Not technically an alias, but does the same thing. Needs to be a function for pwd to expand properly
