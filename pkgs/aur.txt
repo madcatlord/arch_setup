@@ -3,6 +3,7 @@ clipse
 google-chrome
 mongosh-bin
 mpvpaper
+mpvpaper-debug
 python-pywal16
 visual-studio-code-bin
 yay
