@@ -35,7 +35,8 @@ tmpy() {
 }
 
 # Setting up workspace 1 terminal
-hyprctl dispatch exec [workspace 1 silent] "$ALA_FRONT"
+# hyprctl dispatch exec [workspace 1 silent] "$ALA_FRONT"
+hyprctl dispatch exec [workspace 1 silent] "zeditor ~/code/dietary/mobile"
 
 # Starting metro dev server
 tmpy 3 "$ALA_FRONT" "npm start -- --reset-cache"
@@ -46,7 +47,6 @@ tmpy 3 "$ALA_FRONT" "npm run waydroid"
 # Starting backend
 # FIX: Cant execute the startServer script because direnv only loads the VENV variables after this is done, meaning we do not have access to the fastapi command
 tmpy 4 "alacritty" "cd $BACK && dcp up -d"
-tmpy 4 "alacritty" "cd $BACK"
 
 # Preparing terminal to access db
-tmpy 5 "alacritty" "cd $BACK && source ./scripts/enterDb.sh"
+tmpy 5 "alacritty" "cd $BACK"
