@@ -27,6 +27,7 @@ libreoffice-still
 man-pages
 mesa-utils
 nmap
+obs-studio
 obsidian
 pacman-contrib
 reflector
