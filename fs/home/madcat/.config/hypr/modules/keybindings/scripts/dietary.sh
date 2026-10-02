@@ -46,7 +46,7 @@ tmpy 3 "$ALA_FRONT" "npm run waydroid"
 
 # Starting backend
 # FIX: Cant execute the startServer script because direnv only loads the VENV variables after this is done, meaning we do not have access to the fastapi command
-tmpy 4 "alacritty" "cd $BACK && dcp up -d"
+# tmpy 4 "alacritty" "cd $BACK && dcp up -d"
 
 # Preparing terminal to access db
-tmpy 5 "alacritty" "cd $BACK"
+# tmpy 5 "alacritty" "cd $BACK"
