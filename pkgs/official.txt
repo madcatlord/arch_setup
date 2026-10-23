@@ -3,6 +3,7 @@ base
 bat-extras
 boost
 brightnessctl
+cmake
 cyme
 direnv
 docker
@@ -26,6 +27,7 @@ kdeconnect
 libreoffice-still
 man-pages
 mesa-utils
+meson
 nmap
 obs-studio
 obsidian
