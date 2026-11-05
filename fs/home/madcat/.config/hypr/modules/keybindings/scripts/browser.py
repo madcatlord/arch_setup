@@ -12,7 +12,7 @@ wID = int(argv[2]) # Workspace ID to for the browser
 
 def main():
     # GoTo workspace
-    sb.run(f"hyprctl dispatch workspace {wID}".split(" "))
+    sb.run(["hyprctl", "dispatch", f'hl.dsp.focus({{ workspace = "{wID}" }})'])
 
     # Get info on currently running programs
     clients = sb.run("hyprctl clients -j".split(" "), capture_output=True)
@@ -25,7 +25,7 @@ def main():
 
     # Start the browser on the specified workspace, if it hasnt already
     if not browser_present:
-        sb.Popen(f"hyprctl dispatch exec [workspace {wID} silent] {browser}".split(" "))
+        sb.run(["hyprctl", "dispatch", f'hl.dsp.exec_cmd("{browser}", {{ workspace = "{wID} silent" }})'])
 
 
 

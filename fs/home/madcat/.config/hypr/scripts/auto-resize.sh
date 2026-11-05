@@ -36,7 +36,7 @@ fi
 
 
 # FIX: This does not work as it should. The window resizes itself for some reason
-# hyprctl dispatch setfloating active
-# hyprctl dispatch resizeactive exact "$nWidth" "$nHeight"
-# hyprctl dispatch centerwindow
+# hyprctl dispatch 'hl.dsp.window.float({ action = "set" })' 
+# hyprctl dispatch 'hl.dsp.window.resize({ x = 800, y = 600 })' # Example only; old lines were commented out
+# hyprctl dispatch 'hl.dsp.window.center({})' 
   

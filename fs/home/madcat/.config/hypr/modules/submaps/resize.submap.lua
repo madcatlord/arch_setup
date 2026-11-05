@@ -1,0 +1,8 @@
+hl.bind("SUPER + ALT + R", hl.dsp.submap("resize"))
+hl.define_submap("resize", function()
+    hl.bind("A", hl.dsp.window.resize({ x = -10, y = 0, relative = true }), { repeating = true })
+    hl.bind("W", hl.dsp.window.resize({ x = 0, y = -10, relative = true }), { repeating = true })
+    hl.bind("D", hl.dsp.window.resize({ x = 10, y = 0, relative = true }), { repeating = true })
+    hl.bind("S", hl.dsp.window.resize({ x = 0, y = 10, relative = true }), { repeating = true })
+    hl.bind("escape", hl.dsp.submap("reset"))
+end)

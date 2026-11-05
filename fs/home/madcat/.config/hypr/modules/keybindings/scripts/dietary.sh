@@ -30,13 +30,12 @@ tmpy() {
 	START=$2
 	CMD=$3
 
-	hyprctl dispatch exec [workspace "$WID" silent] \
-		"$START -e bash -ic \"$CMD; exec bash -i\""
+	hyprctl dispatch "hl.dsp.exec_cmd([[${START} -e bash -ic \"${CMD}; exec bash -i\"]], { workspace = [[${WID} silent]] })"
 }
 
 # Setting up workspace 1 terminal
 # hyprctl dispatch exec [workspace 1 silent] "$ALA_FRONT"
-hyprctl dispatch exec [workspace 1 silent] "zeditor ~/code/dietary/mobile"
+hyprctl dispatch 'hl.dsp.exec_cmd("zeditor ~/code/dietary/mobile", { workspace = "1 silent" })' 
 
 # Starting metro dev server
 tmpy 3 "$ALA_FRONT" "npm start -- --reset-cache"
