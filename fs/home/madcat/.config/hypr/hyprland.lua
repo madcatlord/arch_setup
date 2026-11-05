@@ -72,22 +72,42 @@ for name, c in pairs(curves) do
     hl.curve(name, { type = "bezier", points = { { c[1], c[2] }, { c[3], c[4] } } })
 end
 
-local animations = {
-    {"global", 10, "default"}, {"border", 5.39, "easeOutQuint"},
-    {"windows", 4.79, "easeOutQuint"}, {"windowsIn", 4.1, "easeOutQuint", "popin 87%"},
-    {"windowsOut", 1.49, "linear", "popin 87%"},
-    {"fadeIn", 1.73, "almostLinear"}, {"fadeOut", 1.46, "almostLinear"},
-    {"fade", 3.03, "quick"}, {"layers", 3.81, "easeOutQuint"},
-    {"layersIn", 4, "easeOutQuint", "fade"}, {"layersOut", 1.5, "linear", "fade"},
-    {"fadeLayersIn", 1.79, "almostLinear"}, {"fadeLayersOut", 1.39, "almostLinear"},
-    {"workspaces", 1.94, "almostLinear", "fade"},
-    {"workspacesIn", 1.21, "almostLinear", "fade"},
-    {"workspacesOut", 1.94, "almostLinear", "fade"},
-    {"zoomFactor", 7, "quick"},
-}
-for _, a in ipairs(animations) do
-    hl.animation({ leaf = a[1], enabled = true, speed = a[2], curve = a[3], style = a[4] })
-end
+-- ====================================================================================
+--                            ANIMATIONS
+-- ====================================================================================
+
+hl.animation({
+    leaf = "global",
+    enabled = true,
+    speed = 10,
+    bezier = "default",
+})
+
+hl.animation({
+    leaf = "border",
+    enabled = true,
+    speed = 5.39,
+    bezier = "easeOutQuint",
+})
+
+hl.animation({
+    leaf = "windows",
+    enabled = true,
+    speed = 4.79,
+    bezier = "easeOutQuint",
+})
+
+hl.animation({
+    leaf = "windowsIn",
+    enabled = true,
+    speed = 4.1,
+    bezier = "easeOutQuint",
+    style = "popin 87%",
+})
+
+-- ====================================================================================
+--                            ANIMATIONS END
+-- ====================================================================================
 
 hl.gesture({ fingers = 3, direction = "horizontal", action = "workspace" })
 hl.device({ name = "epic-mouse-v1", sensitivity = -0.5 })
