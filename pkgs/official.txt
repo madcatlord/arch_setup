@@ -37,6 +37,7 @@ rofi
 sddm
 tealdeer
 terminus-font
+thunderbird
 ttf-jetbrains-mono-nerd
 unzip
 waybar
