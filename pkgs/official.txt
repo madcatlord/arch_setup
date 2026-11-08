@@ -35,6 +35,7 @@ pacman-contrib
 reflector
 rofi
 sddm
+stylua
 tealdeer
 terminus-font
 thunderbird
