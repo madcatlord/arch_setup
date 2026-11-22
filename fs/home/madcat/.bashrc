@@ -33,6 +33,8 @@ eval "$(uv generate-shell-completion bash)"
 ### This is for adding direnv to each cd call
 eval "$(direnv hook bash)"
 
+### This initializes rbenv (ruby version manager)
+eval "$(rbenv init -)"
 
 ### Load Pywal Theme for this terminal
 (cat ~/.cache/wal/sequences &)

@@ -1,3 +1,4 @@
+adobe-source-serif-fonts
 alacritty
 base
 bat-extras
@@ -32,6 +33,7 @@ nmap
 obs-studio
 obsidian
 pacman-contrib
+rbenv
 reflector
 rofi
 sddm
