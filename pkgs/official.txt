@@ -18,6 +18,7 @@ go
 godot
 helix
 htop
+hyphen-en
 hypridle
 hyprland
 hyprlock
